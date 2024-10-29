@@ -1,0 +1,19 @@
+// Scripts de clase - Septiembre 5 de 2024 
+// Curso de Tópicos Avanzados de base de datos - UPB 202410
+// Juan Dario Rodas - juand.rodasm@upb.edu.co
+
+// Proyecto: Michipedia - Enciclopedia de Gatos
+// Motor de Base de datos: PostgreSQL 16.x
+
+Table core.paises {
+    id int [pk, increment, note: 'id del pais']
+    nombre varchar(100) [not null, note: 'Nombre del pais']
+    continente varchar(100) [not null, note: 'Continente donde está ubicado el país']
+
+    indexes {
+        (nombre, continente) [unique, name: 'paises_continentes_uk']
+    }
+
+
+note: 'Paises origen de las razas de gatos'
+}
